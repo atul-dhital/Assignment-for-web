@@ -1,6 +1,6 @@
 :root {
   --dark: #374151;
-  --darker: #1f2937;
+  --darker: #303641;
   --darkest: #111827;
   --grey: #6b7280;
   --pink: #a14875;
@@ -21,14 +21,17 @@ body {
   width: 100%;
   min-height: 100%;
   color: #fff;
-  background-color: var(--dark);
+  background-color: white;
   margin: 0 auto;
 }
 body .header {
-  padding: 32px 16px;
+  width: 100%;
+  padding: 60px 16px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 100px;
 }
 @media (max-width: 600px) {
   body .header {
@@ -37,46 +40,46 @@ body .header {
   }
 }
 body .header h1 {
-  font-size: 2.5rem;
+  font-size: 40px;
   font-weight: 300;
   color: var(--grey);
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
   margin-right: 10px;
-  color: #fff;
+  color: #0a0a0a;
 }
 body #new-task-form {
   display: flex;
-}
-body input,
-body button {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  border: none;
-  outline: none;
-  background: none;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 body #new-task-input {
-  display: flex;
-  background-color: var(--darker);
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-right: 1rem;
-  color: var(--light);
-  font-size: 1.25rem;
+  background-color: transparent;
+  padding: 10px;
+  margin-right: 16px;
+  color: #111827;
+  font-size: 20px;
   width: 300px;
+  max-height: 100px;
+  border: 1px solid rgb(24, 21, 21);
+  word-wrap: break-word;
+  resize: vertical;
+  border-radius: 4px;
 }
 body #new-task-input::-moz-placeholder {
-  color: var(--grey);
+  color: #c1c0c0;
 }
 body #new-task-input::placeholder {
-  color: var(--grey);
+  color: #c1c0c0;
 }
 body #new-task-submit {
-  color: var(--pink);
-  font-size: 1.5rem;
+  font-size: 25px;
   font-weight: 700;
-  color: green;
+  background-color: #54ba61;
+  padding: 12px;
+  color: white !important;
+  border-radius: 15px;
+  text-transform: capitalize;
   cursor: pointer;
   transition: 0.4s;
 }
@@ -93,15 +96,16 @@ body main {
   margin: 0 auto;
 }
 body main .task-list {
-  padding: 1rem;
+  padding: 16px;
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 body main .task-list h2 {
-  font-size: 1.5rem;
+  font-size: 25px;
   font-weight: 300;
   color: var(--grey);
-  margin-bottom: 1rem;
+  margin-bottom: 16px;
 }
 body main .task-list #tasks {
   display: flex;
@@ -109,16 +113,17 @@ body main .task-list #tasks {
   align-items: center;
   flex-wrap: wrap;
   gap: 30px;
+  width: 100%;
 }
 body main .task-list #tasks .task {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background-color: var(--darkest);
-  padding: 1rem;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-  max-width: 400px;
+  background-color: #8d8c8c;
+  padding: 16px;
+  border-radius: 20px;
+  margin-bottom: 16px;
+  max-width: 33%;
   min-height: 100px;
 }
 body main .task-list #tasks .task .content {
@@ -131,23 +136,29 @@ body main .task-list #tasks .task .content .card__top {
   display: flex;
   justify-content: space-between;
 }
+body main .task-list #tasks .task .content .card__top .card__title {
+  font-size: 20px;
+}
 body main .task-list #tasks .task .content .card__top #done {
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 4px;
-  color: #333;
+  color: #dadbda;
   padding: 8px 12px;
+  width: 20px;
+  height: 20px;
 }
 body main .task-list #tasks .task .content .card__top #done:focus {
   outline: none;
   border-color: rgb(92, 92, 177);
 }
 body main .task-list #tasks .task .content .text {
-  color: var(--light);
-  font-size: 1.125rem;
+  font-size: 18px;
   width: 100%;
   display: block;
   transition: 0.4s;
+  padding-top: 10px;
+  font-size: 20px;
 }
 body main .task-list #tasks .task .content .text:not(:-moz-read-only) {
   color: var(--pink);
@@ -157,20 +168,23 @@ body main .task-list #tasks .task .content .text:not(:read-only) {
 }
 body main .task-list #tasks .task .actions {
   display: flex;
-  margin: 0 -0.5rem;
+  margin: 0 -8px;
   justify-content: center;
 }
 body main .task-list #tasks .task .actions .delete {
   cursor: pointer;
-  margin: 0 0.5rem;
-  font-size: 1.125rem;
+  margin: 0 8px;
+  font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
   transition: 0.4s;
-  color: brown;
+  background: transparent;
+  color: #aa2d2d;
+  outline: none;
+  border: none;
 }
 body main .task-list #tasks .task .actions .delete:hover {
-  opacity: 0.8;
+  color: #94d79b;
 }
 body main .task-list #tasks .task .actions .delete:active {
   opacity: 1;
@@ -183,5 +197,4 @@ body main .task-list #tasks .task .actions .delete:active {
   text-align: center;
   height: auto;
   height: 200px;
-  overflow: scroll;
 }/*# sourceMappingURL=main.css.map */
